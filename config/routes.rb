@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'events/index'
+  get 'events/create'
+  root to: 'events#index'
+  resources :events, only: %i[index create]
 end

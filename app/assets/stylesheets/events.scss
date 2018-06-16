@@ -1,0 +1,32 @@
+@import 'constants';
+
+.calendar__days {
+  display: flex;
+
+  &-day {
+    box-shadow:
+        -1px -1px $c-border,
+        inset -1px -1px 0 0 $c-border;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
+    &-wday {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    &-date {
+      text-align: center;
+      border-bottom: 1px solid $c-border;
+    }
+
+    &-events {
+      &-item {
+        padding: 5px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}

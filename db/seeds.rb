@@ -1,9 +1,12 @@
-# frozen_string_literal: true
+srand()
+Event.delete_all
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+today = Date.current
+dates = [today, today + 2.days, today + 8.days]
+titles = ['Meet with Leia', 'Dinner with Darth Vader', 'Gym session with Luke']
+
+10.times do
+  start_on = dates.sample
+  end_on = start_on + rand(5).days
+  Event.create(title: titles.sample, start_on: start_on, end_on: end_on)
+end

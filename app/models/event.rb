@@ -4,6 +4,14 @@ class Event < ApplicationRecord
   validates :title, :start_on, :end_on, presence: true
   validate :end_before_start
 
+  scope :for_week, lambda { |start_of_week|
+    where(
+      'start_on >= :start_of_week AND start_on <= :end_of_week ',
+      start_of_week: start_of_week,
+      end_of_week: start_of_week + 7.days
+    ).order(start_on: :asc)
+  }
+
   private
 
   def end_before_start
