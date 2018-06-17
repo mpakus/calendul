@@ -1,0 +1,7 @@
+.row
+  .col
+    = link_to events_path(start_of_week: previous_start_of_week), remote: true, class: 'badge badge-info' do
+      | &lsaquo;
+  .col.text-right
+    = link_to events_path(start_of_week: next_start_of_week), remote: true, class: 'badge badge-info' do
+      | &rsaquo;
