@@ -18,18 +18,17 @@ class EventsController < ApplicationController
   end
 
   def events
-    @events ||= Event.for_week(start_of_week)
+    @events ||= Events.new(Event.for_week(start_of_week))
   end
 
   #--- Helpers ---
 
   helper_method def events_on(date)
-    @events_on ||= {}
-    @events_on[date] ||= events.select { |e| (date >= e.start_on) && (date <= e.end_on) }
+    events.on(date)
   end
 
   helper_method def start_of_week
-    params[:start_of_week] || Date.current.beginning_of_week
+    params.fetch(:start_of_week, nil) || Date.current.beginning_of_week
   end
 
   helper_method def end_of_week

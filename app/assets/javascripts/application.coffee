@@ -4,3 +4,4 @@
 #= require rails-ujs
 #= require turbolinks
 #= require events
+#= require tooltips

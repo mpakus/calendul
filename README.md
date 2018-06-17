@@ -1,24 +1,22 @@
-# README
+# Install & Run
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> bundle install
 
-Things you may want to cover:
+> rails s
 
-* Ruby version
+Then open `localhost:3000` in your browser.
 
-* System dependencies
+Double click displays add form. 
 
-* Configuration
+# Description
 
-* Database creation
+We ask candidates to undertake a small development exercise for us so they can demonstrate their technical prowess. In this instance, we want you to build a simple Rails application which comprises an events calendar. This application will consist of an /events page which displays a weekly calendar highlighting the current date. Application users must be able to create an event which contains start and end date plus a description.
+Furthermore, the created event should instantly show on the calendar along with some indication as to when the event starts and finishes. The image on the /events page provides an example of what we are looking for.
+Given this requirement, candidates should create an EventsController with these actions: index, create.
+Events should be saved in a backend store without refreshing the page.
+This is an example of what we would like it to look like, however it doesn’t need to be pixel perfect.
 
-* Database initialization
+Candidates may use any gems/plugins when building your solution. However, we will question candidates on their choices of gems/plugins.
+Please commit changes to git often with descriptive messages. These messages and the granularity of commits will be examined.
+Most candidates take around 3-7 hours.  Please try to keep your work to under 6 hours if you can
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
