@@ -1,5 +1,7 @@
 # Install & Run
 
+[ ![Codeship Status for mpakus/calendul](https://app.codeship.com/projects/cb7a1c80-5438-0136-250f-36a505c01785/status?branch=master)](https://app.codeship.com/projects/294397)
+
 > bundle install
 
 > rails s
