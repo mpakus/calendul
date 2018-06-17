@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+class Events
+  constructor: ->
+    @bindEvents()
+  
+  bindEvents: ->
+    $('#calendar').on 'dblclick', '.calendar__days-day', ->
+      $('#addModal').modal()
+
+$ -> new Events()
