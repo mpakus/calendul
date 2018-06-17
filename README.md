@@ -6,7 +6,11 @@
 
 Then open `localhost:3000` in your browser.
 
-Double click displays add form. 
+Double click displays add form.
+
+# Screenshot
+
+![Alt text](https://monosnap.com/image/9pVLUIKOIPyS5RX87QvO5hcbSNvoVK.png)
 
 # Description
 

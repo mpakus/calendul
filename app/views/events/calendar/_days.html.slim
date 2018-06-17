@@ -1,5 +1,5 @@
 - (start_of_week..end_of_week).each do |day|
-  .calendar__days-day data-toggle="tooltip" title="Double click to add Event"
+  .calendar__days-day data-toggle="tooltip" title="Double click to add Event" data-day="#{day}"
     .calendar__days-day-wday= Date::DAYNAMES[day.wday]
     .calendar__days-day-date= l day
     .calendar__days-day-events

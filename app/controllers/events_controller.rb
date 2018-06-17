@@ -2,16 +2,20 @@
 
 class EventsController < ApplicationController
   def index
-    @event = Event.new
+    empty_event!
   end
 
   def create
     @event = Event.new(event_params)
-    return if @event.save
+    return empty_event! if @event.save
     render 'fail_form'
   end
 
   private
+
+  def empty_event!
+    @event = Event.new
+  end
 
   def event_params
     params.require(:event).permit(:title, :description, :start_on, :end_on)
