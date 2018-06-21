@@ -6,3 +6,5 @@
       - events_on(day).each do |event|
         .calendar__days-day-events-item style="background-color: ##{"#{event.id}#{event.title}".hash.to_s(16).slice(1,6)}"
           = event.title
+          .text-right
+            = link_to 'Edit', edit_event_path(event), remote: true, class: 'btn btn-primary'

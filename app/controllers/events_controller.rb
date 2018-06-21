@@ -1,8 +1,15 @@
 # frozen_string_literal: true
 
 class EventsController < ApplicationController
+  before_action :set_event, only: %i[edit update]
   def index
     empty_event!
+  end
+
+  def edit; end
+
+  def update
+    @event.update(event_params)
   end
 
   def create
@@ -37,5 +44,11 @@ class EventsController < ApplicationController
 
   helper_method def end_of_week
     start_of_week + 6.days
+  end
+
+  private
+
+  def set_event
+    @event = Event.find(params[:id])
   end
 end
