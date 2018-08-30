@@ -39,7 +39,18 @@ class EventsController < ApplicationController
   end
 
   helper_method def start_of_week
-    params.fetch(:start_of_week, nil) || Date.current.beginning_of_week
+    return @start_of_week if @start_of_week.present?
+    start = params.fetch(:start_of_week, nil)
+    @start_of_week = start.present? ? Date.parse(start) : Date.current.beginning_of_week
+    @start_of_week
+  end
+
+  helper_method def previous_start_of_week
+    start_of_week - 7.days
+  end
+
+  helper_method def next_start_of_week
+    start_of_week + 7.days
   end
 
   helper_method def end_of_week
